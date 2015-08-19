@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>[@ViewBag.Version] - Checkout Complete!</h2>
+
+<h3>Thanks for your order.</h3>
+
+@using (Html.BeginForm("Send" + (string)ViewBag.Version, "Fulfilment"))
+{
+    <div class="alert alert-info">
+        <div class="form">
+            <label class="control-label">
+                How do you want to get your confirmation?
+            </label>
+            <label class="radio">
+                <input value="1" type="radio" name="fulfilmentType">E-mail
+            </label>
+            <label class="radio">
+                <input value="2" type="radio" name="fulfilmentType">Text Message
+            </label>
+            <label class="radio">
+                <input value="3" type="radio" name="fulfilmentType">Twitter DM
+            </label>
+        </div>
+    </div>
+    <input type="submit" value="Thanks" class="btn" />
+}
+
